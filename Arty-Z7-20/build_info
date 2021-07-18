@@ -1,4 +1,4 @@
 PETALINUX_SDK_VER=2017.4
-GCC_HEADER=arm-linux-gnueabihf
-
+export GCC_HEADER=arm-linux-gnueabihf
+export SSH_PASS=evertz
 
