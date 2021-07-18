@@ -29,11 +29,14 @@
 *
 */
 
+
+
 #include <stdio.h>
 
 int main(int argc, char **argv)
 {
-    printf("Hello Pauls World!\n");
+	for (int i=0; i<3; i++)
+	    printf("#%d Hello Pauls NEW-V004 World!\n", i);
 
     return 0;
 }

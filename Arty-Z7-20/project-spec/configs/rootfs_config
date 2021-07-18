@@ -2380,7 +2380,7 @@ CONFIG_libstdcPLUSPLUS=y
 #
 # gdb 
 #
-# CONFIG_gdb is not set
+CONFIG_gdb=y
 # CONFIG_gdb-dbg is not set
 # CONFIG_gdb-dev is not set
 # CONFIG_gdbserver is not set
@@ -3672,7 +3672,7 @@ CONFIG_bridge-utils=y
 #
 # tcpdump 
 #
-# CONFIG_tcpdump is not set
+CONFIG_tcpdump=y
 # CONFIG_tcpdump-dbg is not set
 # CONFIG_tcpdump-dev is not set
 
@@ -4122,10 +4122,12 @@ CONFIG_bridge-utils=y
 #
 # apps 
 #
+CONFIG_fssetup=y
 # CONFIG_gpio-demo is not set
 CONFIG_gpioutil=y
 # CONFIG_kmsdemo is not set
 # CONFIG_peekpoke is not set
+CONFIG_phtest=y
 CONFIG_pwmdemo=y
 
 #
@@ -4139,4 +4141,4 @@ CONFIG_libuio=y
 #
 # PetaLinux RootFS Settings
 #
-CONFIG_ROOTFS_ROOT_PASSWD="root"
+CONFIG_ROOTFS_ROOT_PASSWD="evertz"
