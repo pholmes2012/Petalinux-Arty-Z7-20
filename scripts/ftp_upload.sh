@@ -9,6 +9,10 @@
 #
 # Usage: ftp_upload.sh [filepath] dir=[dest path] ip=[ip address]
 
+CWD=${PWD}
+
+. ${CWD}/config/settings.sh
+
 # Parse command line arguments
 FILE=""       # Image name must be passed as an argument
 DSTDIR="/tmp" # destination sub-directory
@@ -41,12 +45,11 @@ echo "[ftp_upload.sh] ${FILE} ${DSTDIR} ${IP}"
 # FTP the executable to the specified IP address
 if [ ! -z ${IP} -a ! -z ${FILE} -a -f ${FILE} ]; then
    USER=root
-   PASSWD=evertz
    
    echo "FTP proof" > ~/_ftp_proof.txt
    chmod +x ${FILE}
    ftp -n ${IP} <<SCRIPT
-   user $USER $PASSWD
+   user $USER $SSH_PASS
    cd ${DSTDIR}
    lcd $(dirname ${FILE})
    put $(basename ${FILE})
