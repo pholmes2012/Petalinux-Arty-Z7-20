@@ -1,5 +1,8 @@
 PETALINUX_SDK_VER=2017.4
 export GCC_HEADER=arm-linux-gnueabihf
 export SSH_PASS=evertz
-export PH_TEMP="~/projects/temp"
 
+export TEMP_PATH=temp
+export CONFIG_PATH=config
+export SCRIPT_PATH=scripts
+export BUILD_ROOT="Arty-Z7-20"
