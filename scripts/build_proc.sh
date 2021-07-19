@@ -35,12 +35,10 @@ fi
 
 APP_PATH=${BUILD_ROOT}/project-spec/meta-user/recipes-apps/${APP_NAME}/files
 
-echo -ne "[build_proc.sh] Building '${APP_NAME}'... "
-cd ${APP_PATH}
 
-rm *.o
-if [ -f ${APP_NAME} ]; then 
-  rm ${APP_NAME}
+rm ${APP_PATH}/*.o
+if [ -f ${APP_PATH}/${APP_NAME} ]; then 
+  rm ${APP_PATH}/${APP_NAME}
 fi
 
 export KERNEL_src=${BUILD_ROOT}/build/tmp/work-shared/plnx_arm/kernel-source
@@ -49,15 +47,16 @@ export CC=${GCC_HEADER}-gcc
 export CXX=${GCC_HEADER}-g++
 export LD=${GCC_HEADER}-ld.bfd
 
+echo "[build_proc.sh] Building '${APP_NAME}'... "
+cd ${APP_PATH}
 make
+cd ${CWD}
 
-
-if [ -f ${APP_NAME} ]; then 
+if [ -f ${APP_PATH}/${APP_NAME} ]; then 
   if [ ! -z ${IP} ]; then
-    ${CWD}/scripts/ftp_upload.sh ${APP_NAME} dir=/tmp ip=${IP}
+    ${SCRIPT_PATH}/ftp_upload.sh ${APP_PATH}/${APP_NAME} dir=/usr/bin ip=${IP}
   fi
-  cp ${APP_NAME} ${CWD}/temp
-  rm ${APP_NAME}
+  cp ${APP_PATH}/${APP_NAME} ${TEMP_PATH}
+  rm ${APP_PATH}/${APP_NAME}
 fi
 
-cd ${CWD}
