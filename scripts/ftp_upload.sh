@@ -1,5 +1,4 @@
 #!/bin/sh
-
 # Firmware archive FTP process upload script.
 #
 # Copyright (C) 2021 Paul Holmes

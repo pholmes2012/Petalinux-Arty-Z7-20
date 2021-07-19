@@ -1,4 +1,9 @@
 #!/bin/sh
+# PetaLinux project exports for scripts
+#
+# Copyright (C) 2021 Paul Holmes
+# Author: Paul Holmes
+
 
 PETALINUX_SDK_VER=2017.4
 export GCC_HEADER=arm-linux-gnueabihf

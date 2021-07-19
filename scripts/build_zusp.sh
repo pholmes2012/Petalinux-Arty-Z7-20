@@ -1,6 +1,7 @@
 #!/bin/sh
 # Build PetaLinux project script
 #
+# Copyright (C) 2021 Paul Holmes
 # Author: Paul Holmes
 #
 # This script builds a petalinux project
